@@ -1,4 +1,6 @@
-* {box-sizing: border-box;}
+* {
+	box-sizing: border-box;
+}
 
 /* Small Single-Column Layout */
 
@@ -14,17 +16,16 @@ body {
 	padding: 0;
 }
 
-header 
-	{ 
+header {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 105px;
 	height: 128px;
-	background-color:#d2b48c;
-    color:#231814;
+	background-color: #d2b48c;
+	color: #231814;
 	background-image: url(images/cup.jpg);
 	background-repeat: no-repeat;
-	}
+}
 
 header a {
 	text-decoration: none;
@@ -53,8 +54,8 @@ h2 {
 }
 
 h3 {
-    color:#8c3826;
-	}
+	color: #8c3826;
+}
 
 h4 {
 	background-color: #d2b48c;
@@ -107,40 +108,47 @@ img {
 	background-repeat: no-repeat;
 }
 
+#herojobs {
+	height: 300px;
+	background-image: url(images/coffeecup.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
 dt {
 	color: #8c3826;
 }
 
 dd {
-	font-style:italic; 
-    font-size:.90em;
-    line-height:200%;
-	}
+	font-style: italic;
+	font-size: .90em;
+	line-height: 200%;
+}
 
-.contact { 
+.contact {
 	font-family: "Times New Roman", serif;
-    font-size: .90em;
-    font-weight:bold;
-	}
+	font-size: .90em;
+	font-weight: bold;
+}
 
 nav {
 	text-align: center;
 	font-size: 1.5em;
 }
-	
+
 nav a {
 	text-decoration: none;
 }
 
-nav a:link { 
+nav a:link {
 	color: #fef6c2;
 }
 
-nav a:visited { 
+nav a:visited {
 	color: #d2b48c;
 }
 
-nav a:hover { 
+nav a:hover {
 	color: #c93;
 }
 
@@ -171,13 +179,34 @@ main {
 	background-color: #fef6c2;
 }
 
-h2, h3, h4, p, div, ul, dl {
+h2,
+h3,
+h4,
+p,
+div,
+ul,
+dl {
 	padding-left: 1em;
 	padding-right: 1em;
 }
 
 main ul {
 	padding-left: 2em;
+}
+
+table {
+	margin: auto;
+	width: 90%;
+	border-spacing: 0;
+}
+
+th,
+td {
+	padding: 10px;
+}
+
+tr:nth-of-type(odd) {
+	background-color: #d2b48e;
 }
 
 #mobile {
@@ -197,101 +226,130 @@ footer {
 	border-top: 2px solid #8c3826;
 }
 
+form {
+	display: flex;
+	flex-direction: column;
+	padding-left: 1em;
+	width: 80%;
+}
+
+input,
+textarea {
+	margin-bottom: .5em;
+}
+
 /* Medium Layout */
 
 @media (min-width: 600px) {
 
-header {
-	text-align: center;
-	padding-left: 0;
-}
+	header {
+		text-align: center;
+		padding-left: 0;
+	}
 
-h1 {
-	font-size: 3em;
-}
+	h1 {
+		font-size: 3em;
+	}
 
-nav ul {
-	flex-flow: row nowrap;
-	justify-content: space-around;
-}
+	nav ul {
+		flex-flow: row nowrap;
+		justify-content: space-around;
+	}
 
-nav li {
-	border-bottom: none;
-}
+	nav li {
+		border-bottom: none;
+	}
 
-#home-hero {
-	height: 50vh;
-	background-image: url(images/hero.jpg);
-}
+	#home-hero {
+		height: 50vh;
+		background-image: url(images/hero.jpg);
+	}
 
-#heromugs {
-	background-image: url(images/heromugs.jpg);
-}
+	#heromugs {
+		background-image: url(images/heromugs.jpg);
+	}
 
-#heroguitar {
-	background-image: url(images/heroguitar.jpg);
-}
+	#heroguitar {
+		background-image: url(images/heroguitar.jpg);
+	}
 
-#flow {
-	display: flex;
-	flex-direction: row;
-}
+	#flow {
+		display: flex;
+		flex-direction: row;
+	}
 
-#mobile {
-	display: none;
-}
+	#mobile {
+		display: none;
+	}
 
-#desktop {
-	display: inline;
-}
+	#desktop {
+		display: inline;
+	}
 
-.details {
-	display: flex;
-	flex-direction: row;
-}
+	.details {
+		display: flex;
+		flex-direction: row;
+	}
 
-h4 {
-	margin-left: 10%;
-	margin-right: 10%;
-}
+	h4 {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+	form {
+		width: 40%;
+		display: grid;
+		grid-gap: 1em;
+		gap: 1em;
+		grid-template-columns: 6em 1fr;
+	}
+
+	input[type="submit"] {
+		grid-column: 2 / 3;
+		width: 9em;
+	}
+
+	#herojobs {
+		background-image: url(images/herojobs.jpg);
+	}
 }
 
 /* Large Layout Config. */
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
 
-@supports (display: grid) {
-	header {
-		grid-area: header;
+	@supports (display: grid) {
+		header {
+			grid-area: header;
+		}
+
+		nav {
+			grid-area: nav;
+		}
+
+		main {
+			grid-area: main;
+		}
+
+		footer {
+			grid-area: footer;
+		}
+
+		#wrapper {
+			display: grid;
+			grid-template:
+				"header header"
+				"nav main"
+				"footer footer"
+				/ 200px;
+		}
+
+		nav ul {
+			flex-direction: column;
+		}
+
+		header {
+			background-image: url(images/coffeelogo.jpg);
+		}
 	}
-
-	nav {
-		grid-area: nav;
-	}
-
-	main {
-		grid-area: main;
-	}
-
-	footer {
-		grid-area: footer;
-	}
-
-	#wrapper {
-		display: grid;
-		grid-template:
-			"header header"
-			"nav main"
-			"footer footer"
-			/ 200px;
-	}
-
-nav ul {
-	flex-direction: column;
-}
-
-header {
-	background-image: url(images/coffeelogo.jpg);
-}
-}
 }
