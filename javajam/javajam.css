@@ -73,10 +73,22 @@ h4 {
 	overflow: auto;
 }
 
-.floatleft {
-	float: left;
-	padding-right: 2em;
-	padding-bottom: 2em;
+.item img {
+	float: right;
+
+}
+
+.floatright {
+	float: right;
+	padding-right: 1em;
+	padding-bottom: 1em;
+}
+
+.item {
+	background-color: #faf9f7;
+	margin: 1em;
+	padding: 1em;
+	overflow: auto;
 }
 
 img {
@@ -111,6 +123,13 @@ img {
 #herojobs {
 	height: 300px;
 	background-image: url(images/coffeecup.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#herocouch {
+	height: 300px;
+	background-image: url(images/herocouch.jpg);
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
@@ -154,20 +173,26 @@ nav a:hover {
 
 nav ul {
 	list-style-type: none;
-	display: flex;
-	flex-direction: column;
+	/* display: flex;
+	flex-direction: column; */
 	margin: 0;
 	padding: 0;
 	font-size: 1.25em;
 }
 
 nav li {
-	padding-top: .5em;
+	/* padding-top: .5em;
 	padding-bottom: .5em;
 	padding-right: 1em;
 	padding-left: 1em;
-	width: 100%;
+	width: 100%; */
 	border-bottom: 1px solid #fef6c2;
+}
+
+nav li a {
+	display: flex;
+	flex-direction: column;
+	padding: .5em 1em;
 }
 
 main {
@@ -236,6 +261,13 @@ form {
 input,
 textarea {
 	margin-bottom: .5em;
+}
+
+.current {
+	text-decoration-line: underline;
+	text-decoration-style: double;
+	background-color: #776655;
+	color: blue
 }
 
 /* Medium Layout */
